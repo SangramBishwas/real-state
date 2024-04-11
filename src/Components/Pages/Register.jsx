@@ -1,12 +1,13 @@
 import { useContext } from "react";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Context } from "../../ContextProvider";
 
 const Register = () => {
-    const { creatUser } = useContext(Context)
+    const { creatUser, updateUserProfile } = useContext(Context);
+    const navigate = useNavigate()
     const {
         register,
         handleSubmit,
@@ -14,13 +15,16 @@ const Register = () => {
     } = useForm()
 
     const Register = (data) => {
-        const { email, password, } = data;
-        console.log(email, password);
+        const { email, password, name, PhotoURL } = data;
 
         creatUser(email, password)
-            .then((result) => {
-                console.log(result.user);
-                toast.success('Successfully Registered')
+            .then(() => {
+                toast.success('Successfully Registered');
+                updateUserProfile(name, PhotoURL)
+                    .then(() => {
+                        navigate("/")
+                    })
+                    .catch((error) => console.error(error))
             })
             .catch((error) => console.error(error))
     }
@@ -34,13 +38,15 @@ const Register = () => {
                             <span className="label-text">Your Name</span>
                         </label>
                         <input type="text" placeholder="Name"
-                            name="name" className="input input-bordered" required />
+                            name="name" className="input input-bordered" required
+                            {...register("name", { required: true })} />
                     </div>
                     <div className="form-control">
                         <label className="label">
                             <span className="label-text">Photo URL</span>
                         </label>
-                        <input type="text" placeholder="Photo URL" className="input input-bordered" />
+                        <input type="text" placeholder="Photo URL" className="input input-bordered" required
+                            {...register("PhotoURL", { required: true })} />
                     </div>
                     <div className="form-control">
                         <label className="label">

@@ -3,17 +3,15 @@ import { Link, NavLink } from "react-router-dom";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Context } from "../ContextProvider";
-import userimg from "../assets/user.png"
-import { toast } from 'react-toastify';
+import userimg from "../assets/user.png";
+
 const Navbar = () => {
     const { user, LogOut } = useContext(Context)
     console.log(user);
-    const handleLogOut = () =>{
+    const handleLogOut = () => {
         LogOut()
-        .then(() => {
-            toast('Log-out successful')
-        })
-        .catch(error => console.error(error))
+            .then()
+            .catch(error => console.error(error))
     }
     const navLinks = <>
         <li><NavLink to="/">Home</NavLink></li>
@@ -45,20 +43,32 @@ const Navbar = () => {
                         <Link to="/login" className="btn text-lg font-semibold">Login</Link>
                     </div> :
                     <div className="dropdown dropdown-end flex justify-end w-1/2">
-                        <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-                            <div className="w-10 rounded-full">
-                                <img alt="Tailwind CSS Navbar component" src={userimg} />
+                        <div className="tooltip tooltip-bottom" data-tip={`${user?.displayName || 'user'}`}>
+                            <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+                                <div className="w-12 rounded-full">
+                                    <img src={user?.photoURL || userimg} />
+                                </div>
                             </div>
                         </div>
-                        <ul tabIndex={0} className="menu menu-sm dropdown-content mt-36 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-                            <li>
-                                <a className="justify-between">
-                                    Profile
-                                    <span className="badge">New</span>
-                                </a>
+
+                        <ul tabIndex={0} className="menu menu-sm dropdown-content mt-52 z-[1] p-2 shadow bg-black text-white rounded-box w-auto space-y-2">
+                            <li className="justify-between">
+                                <span className="font-semibold">{user?.displayName || 'User'}</span>
+
                             </li>
-                            <li><a>Settings</a></li>
-                            <li><a onClick={handleLogOut}>Logout</a></li>
+                            <li>
+                                <span className="font-semibold">{user?.email}</span>
+                            </li>
+                            <li>
+                                <button className="btn btn-sm">
+                                    <Link to="/update&profile">
+                                        Update Your Profile
+                                    </Link>
+                                </button>
+                            </li>
+                            <li>
+                                <button className="btn btn-sm" onClick={handleLogOut}>Logout</button>
+                            </li>
                         </ul>
                     </div>}
             </div>

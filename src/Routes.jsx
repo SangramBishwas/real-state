@@ -6,6 +6,7 @@ import Home from "./Components/Pages/Home";
 import Register from "./Components/Pages/Register";
 import About from "./Components/Pages/About";
 import Login from "./Components/Pages/Login";
+import UpdateProfile from "./Components/Pages/UpdateProfile";
 
 const router = createBrowserRouter([
     {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
         {
             path: "/login",
             element: <Login />
+        },
+        {
+            path: "/update&profile",
+            element: <UpdateProfile/>
         }
       ]
     },
