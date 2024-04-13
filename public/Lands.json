@@ -25,15 +25,15 @@
     },
     {
       "id": 3,
-      "title": "Fertile Agricultural Land",
-      "image": "https://i.ibb.co/rfBwj6s/Agriculture.jpg",
-      "category": "Agricultural Land",
-      "price": 120000,
+      "title": "Untouched Forest Wilderness",
+      "image": "https://i.ibb.co/p3kKdHz/purbachal-residential-area.jpg",
+      "category": "Forests",
+      "price": 80000,
       "status": "Sale",
-      "location": "Bogra",
-      "area": "50 acres",
-      "facilities": ["Irrigation System", "Fertile Soil"],
-      "description": "Invest in this expansive tract of fertile land, perfect for agricultural cultivation. Situated in the heart of Bogra, this land offers abundant opportunities for crop production and farming ventures. The presence of a well-established irrigation system ensures consistent water supply, enabling year-round cultivation. With nutrient-rich soil and favorable climatic conditions, this land is ideal for growing various crops, including rice, wheat, and vegetables. Whether you're a seasoned farmer looking to expand your operations or an investor seeking lucrative agricultural opportunities, this land promises high returns and sustainable growth."
+      "location": "Bandarban",
+      "area": "500 acres",
+      "facilities": ["Natural Habitat", "Wildlife"],
+      "description": "Preserve and protect the natural wonders of Bangladesh with this untouched forest wilderness spanning 500 acres in the pristine landscapes of Bandarban. Home to diverse flora and fauna, including rare and endangered species, this forest sanctuary is a haven for wildlife enthusiasts and conservationists alike. Whether you're seeking to establish a nature reserve, eco-tourism destination, or simply a private sanctuary amidst nature's bounty, this forest wilderness offers endless possibilities. Embrace the serenity of untouched wilderness and embark on a journey of discovery and stewardship."
     },
     {
       "id": 4,
@@ -49,6 +49,18 @@
     },
     {
       "id": 5,
+      "title": "Fertile Agricultural Land",
+      "image": "https://i.ibb.co/rfBwj6s/Agriculture.jpg",
+      "category": "Agricultural Land",
+      "price": 120000,
+      "status": "Sale",
+      "location": "Bogra",
+      "area": "50 acres",
+      "facilities": ["Irrigation System", "Fertile Soil"],
+      "description": "Invest in this expansive tract of fertile land, perfect for agricultural cultivation. Situated in the heart of Bogra, this land offers abundant opportunities for crop production and farming ventures. The presence of a well-established irrigation system ensures consistent water supply, enabling year-round cultivation. With nutrient-rich soil and favorable climatic conditions, this land is ideal for growing various crops, including rice, wheat, and vegetables. Whether you're a seasoned farmer looking to expand your operations or an investor seeking lucrative agricultural opportunities, this land promises high returns and sustainable growth."
+    },
+    {
+      "id": 6,
       "title": "Profitable Fruit Farm",
       "image": "https://i.ibb.co/W5v8HrY/istockphoto.jpg",
       "category": "Farms",
@@ -58,19 +70,6 @@
       "area": "30 acres",
       "facilities": ["Orchards", "Packing House"],
       "description": "Unlock the potential for a lucrative lifestyle with this profitable fruit farm located in the fertile lands of Chittagong. Spread across 30 acres, this farm is equipped with thriving orchards and a modern packing house, making it a turnkey investment opportunity. With a diverse range of fruit trees already in place, including mango, citrus, and banana, you can start reaping the rewards from day one. Whether you're an experienced farmer looking to expand your portfolio or a savvy investor seeking passive income, this fruit farm promises sustainable returns and long-term prosperity."
-    },
-    {
-      "id": 6,
-      "title": "Untouched Forest Wilderness",
-      "image": "https://i.ibb.co/p3kKdHz/purbachal-residential-area.jpg",
-      "category": "Forests",
-      "price": 80000,
-      "status": "Sale",
-      "location": "Bandarban",
-      "area": "500 acres",
-      "facilities": ["Natural Habitat", "Wildlife"],
-      "description": "Preserve and protect the natural wonders of Bangladesh with this untouched forest wilderness spanning 500 acres in the pristine landscapes of Bandarban. Home to diverse flora and fauna, including rare and endangered species, this forest sanctuary is a haven for wildlife enthusiasts and conservationists alike. Whether you're seeking to establish a nature reserve, eco-tourism destination, or simply a private sanctuary amidst nature's bounty, this forest wilderness offers endless possibilities. Embrace the serenity of untouched wilderness and embark on a journey of discovery and stewardship."
     }
-    
   ]
   
