@@ -1,0 +1,76 @@
+[
+    {
+      "id": 1,
+      "title": "Exotic Tea Plantation",
+      "image": "https://i.ibb.co/BNPVVFY/9782559-best-tea-gardens-Bangladesh.jpg",
+      "category": "Plantations",
+      "price": 180000,
+      "status": "Lease",
+      "location": "Moulvibazar",
+      "area": "80 acres",
+      "facilities": ["Tea Processing Facilities", "Workers' Quarters"],
+      "description": "Embark on a journey into the world of tea with this exotic plantation nestled amidst the rolling hills of Moulvibazar. Spanning 80 acres, this tea estate offers a unique opportunity to lease prime land and facilities for tea cultivation and processing. With well-established tea gardens and modern processing facilities in place, you can capitalize on Bangladesh's rich tea heritage and global demand for premium teas. Whether you're a seasoned tea enthusiast or an aspiring entrepreneur, this tea plantation promises a taste of success and a legacy that spans generations."
+    },
+    {
+      "id": 2,
+      "title": "Scenic Vineyard Estate",
+      "image": "https://i.ibb.co/4WBqBXf/Beautiful-places-in-Bangladesh-WMC-hero.jpg",
+      "category": "Vineyards",
+      "price": 480000,
+      "status": "Sale",
+      "location": "Rajshahi",
+      "area": "100 acres",
+      "facilities": ["Vineyard", "Winery"],
+      "description": "Indulge in the romance of winemaking with this scenic vineyard estate nestled in the enchanting hills of Rajshahi. Spanning 100 acres, this estate offers a rare opportunity to own a premium vineyard and winery, complete with rolling vine-covered hills and state-of-the-art facilities. Whether you're a wine enthusiast dreaming of crafting your own vintage or an entrepreneur seeking a prestigious investment, this vineyard estate is your gateway to a world of luxury and refinement. Embrace the timeless allure of vineyard living and let your dreams flourish amidst the vines."
+    },
+    {
+      "id": 3,
+      "title": "Fertile Agricultural Land",
+      "image": "https://i.ibb.co/rfBwj6s/Agriculture.jpg",
+      "category": "Agricultural Land",
+      "price": 120000,
+      "status": "Sale",
+      "location": "Bogra",
+      "area": "50 acres",
+      "facilities": ["Irrigation System", "Fertile Soil"],
+      "description": "Invest in this expansive tract of fertile land, perfect for agricultural cultivation. Situated in the heart of Bogra, this land offers abundant opportunities for crop production and farming ventures. The presence of a well-established irrigation system ensures consistent water supply, enabling year-round cultivation. With nutrient-rich soil and favorable climatic conditions, this land is ideal for growing various crops, including rice, wheat, and vegetables. Whether you're a seasoned farmer looking to expand your operations or an investor seeking lucrative agricultural opportunities, this land promises high returns and sustainable growth."
+    },
+    {
+      "id": 4,
+      "title": "Sprawling Ranch Estate",
+      "image": "https://i.ibb.co/t4sGmZr/Sprawling-Ranch-Estate.jpg",
+      "category": "Ranches",
+      "price": 350000,
+      "status": "Sale",
+      "location": "Sylhet",
+      "area": "200 acres",
+      "facilities": ["Ranch House", "Livestock Facilities"],
+      "description": "Experience the epitome of rustic luxury with this sprawling ranch estate nestled in the picturesque countryside of Sylhet. Spanning 200 acres, this property boasts breathtaking landscapes and endless possibilities. Whether you envision a thriving cattle ranch, a private equestrian retreat, or simply a tranquil haven away from the bustling city, this estate offers it all. Complete with a charming ranch house and state-of-the-art livestock facilities, you can indulge in the joys of rural living without sacrificing modern comforts. Escape the ordinary and embrace the extraordinary with this exceptional ranch estate."
+    },
+    {
+      "id": 5,
+      "title": "Profitable Fruit Farm",
+      "image": "https://i.ibb.co/W5v8HrY/istockphoto.jpg",
+      "category": "Farms",
+      "price": 250000,
+      "status": "Sale",
+      "location": "Chittagong",
+      "area": "30 acres",
+      "facilities": ["Orchards", "Packing House"],
+      "description": "Unlock the potential for a lucrative lifestyle with this profitable fruit farm located in the fertile lands of Chittagong. Spread across 30 acres, this farm is equipped with thriving orchards and a modern packing house, making it a turnkey investment opportunity. With a diverse range of fruit trees already in place, including mango, citrus, and banana, you can start reaping the rewards from day one. Whether you're an experienced farmer looking to expand your portfolio or a savvy investor seeking passive income, this fruit farm promises sustainable returns and long-term prosperity."
+    },
+    {
+      "id": 6,
+      "title": "Untouched Forest Wilderness",
+      "image": "https://i.ibb.co/p3kKdHz/purbachal-residential-area.jpg",
+      "category": "Forests",
+      "price": 80000,
+      "status": "Sale",
+      "location": "Bandarban",
+      "area": "500 acres",
+      "facilities": ["Natural Habitat", "Wildlife"],
+      "description": "Preserve and protect the natural wonders of Bangladesh with this untouched forest wilderness spanning 500 acres in the pristine landscapes of Bandarban. Home to diverse flora and fauna, including rare and endangered species, this forest sanctuary is a haven for wildlife enthusiasts and conservationists alike. Whether you're seeking to establish a nature reserve, eco-tourism destination, or simply a private sanctuary amidst nature's bounty, this forest wilderness offers endless possibilities. Embrace the serenity of untouched wilderness and embark on a journey of discovery and stewardship."
+    }
+    
+  ]
+  

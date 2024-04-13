@@ -1,19 +1,17 @@
 import { useContext } from "react";
 import { Context } from "../../ContextProvider";
-import { useNavigate } from "react-router-dom"; 
 import { toast } from 'react-toastify';
+import { Await } from "react-router-dom";
 const UpdateProfile = () => {
     const { user, updateUserProfile } = useContext(Context);
-    const navigate = useNavigate()
+  
     const handleUpdateInfo = (e) => {
-        e.preventDefault();
         const form = new FormData(e.currentTarget);
         const name = form.get('name');
         const photoURl = form.get('photo');
         updateUserProfile(name, photoURl)
             .then(() => {
-                toast.success('Update information successful')
-                navigate('/')
+                location.reload();
             })
             .catch((error) => console.error(error))
     }

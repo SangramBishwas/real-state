@@ -62,10 +62,10 @@ const Login = () => {
                         <input type={showPassword ? "text" : "password"}
                             name="password"
                             placeholder="password" className="input input-bordered" required />
-                        <button onClick={() => setShowPassword(!showPassword)} className="absolute top-14 right-3">
+                        <span onClick={() => setShowPassword(!showPassword)} className="absolute top-14 right-3">
                             {showPassword ?
                                 <FaEye /> : <FaEyeSlash />}
-                        </button>
+                        </span>
                         <div className="flex justify-between">
                             <label className="label">
                                 <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
