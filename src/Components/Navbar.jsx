@@ -31,7 +31,7 @@ const Navbar = () => {
                             {navLinks}
                         </ul>
                     </div>
-                    <a className="btn btn-ghost text-xl">BdLand</a>
+                    <Link to="/" className="btn btn-ghost font-bold text-2xl lg:text-4xl">BdLand</Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
@@ -43,7 +43,7 @@ const Navbar = () => {
                         <Link to="/login" className="btn text-lg font-semibold">Login</Link>
                     </div> :
                     <div className="dropdown dropdown-end flex justify-end w-1/2">
-                        <div className="tooltip tooltip-bottom" data-tip={`${user?.displayName || 'user'}`}>
+                        <div className="tooltip tooltip-left lg:tooltip-bottom" data-tip={`${user?.displayName || 'user'}`}>
                             <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                                 <div className="w-12 rounded-full">
                                     <img src={user?.photoURL || userimg} />

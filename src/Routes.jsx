@@ -6,7 +6,10 @@ import Home from "./Components/Pages/Home";
 import Register from "./Components/Pages/Register";
 import About from "./Components/Pages/About";
 import Login from "./Components/Pages/Login";
-import UpdateProfile from "./Components/Pages/UpdateProfile";
+import LandDetails from "./Components/Pages/LandDetails";
+import PrivateRoute from "./PrivateRoute";
+
+
 
 const router = createBrowserRouter([
     {
@@ -16,6 +19,11 @@ const router = createBrowserRouter([
         {
             path: "/",
             element: <Home />,
+            loader: () => fetch('/Lands.json')
+        },
+        {
+            path: "/Lands.json/:id",
+            element: <PrivateRoute><LandDetails /></PrivateRoute>,
             loader: () => fetch('/Lands.json')
         },
         {
@@ -29,11 +37,8 @@ const router = createBrowserRouter([
         {
             path: "/login",
             element: <Login />
-        },
-        {
-            path: "/update&profile",
-            element: <UpdateProfile/>
         }
+        
       ]
     },
   ]);

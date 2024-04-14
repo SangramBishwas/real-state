@@ -1,13 +1,15 @@
 import { useContext, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Context } from "../../ContextProvider";
 import { toast } from 'react-toastify';
 import { FcGoogle } from "react-icons/fc";
 import { ImGithub } from "react-icons/im";
 import { FaFacebook, FaEye, FaEyeSlash } from "react-icons/fa";
 const Login = () => {
-    const [showPassword, setShowPassword] = useState(false)
+    const [showPassword, setShowPassword] = useState(false);
+    const [inputPassword, setInputPassword] = useState('')
     const { userLogin, googleLogin, updateUserProfile } = useContext(Context);
+    const location = useLocation()
     const navigate = useNavigate();
     const handleLogin = (e) => {
         e.preventDefault();
@@ -18,7 +20,7 @@ const Login = () => {
             .then((result) => {
                 console.log(result.user);
                 toast.success('Successfully Logged in');
-                navigate("/");
+                navigate(location?.state ? location.state : "/");
             })
             .catch(error => {
                 console.error(error.message);
@@ -26,6 +28,10 @@ const Login = () => {
 
     }
 
+    const handleInputPassword = (e) => {
+        setInputPassword(e.target.value)
+        console.log(e.target.value)
+    }
     const handleSignInWithGoogle = () => {
         googleLogin()
             .then((result) => {
@@ -33,7 +39,7 @@ const Login = () => {
                 const user = result.user
                 updateUserProfile(user.displayName, user.photoURL)
                     .then(() => {
-                        navigate("/")
+                        navigate(location?.state ? location.state : "/");
                     })
                     .catch((error) => console.log(error))
             })
@@ -61,11 +67,14 @@ const Login = () => {
                         </label>
                         <input type={showPassword ? "text" : "password"}
                             name="password"
+                            onChange={handleInputPassword}
                             placeholder="password" className="input input-bordered" required />
-                        <span onClick={() => setShowPassword(!showPassword)} className="absolute top-14 right-3">
-                            {showPassword ?
-                                <FaEye /> : <FaEyeSlash />}
-                        </span>
+                        {inputPassword &&
+                            <span onClick={() => setShowPassword(!showPassword)} className="absolute top-14 right-3">
+                                {showPassword ?
+                                    <FaEye /> : <FaEyeSlash />}
+                            </span>
+                        }
                         <div className="flex justify-between">
                             <label className="label">
                                 <a href="#" className="label-text-alt link link-hover">Forgot password?</a>

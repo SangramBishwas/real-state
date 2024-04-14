@@ -53,7 +53,7 @@
       "image": "https://i.ibb.co/rfBwj6s/Agriculture.jpg",
       "category": "Agricultural Land",
       "price": 120000,
-      "status": "Sale",
+      "status": "Lease",
       "location": "Bogra",
       "area": "50 acres",
       "facilities": ["Irrigation System", "Fertile Soil"],
