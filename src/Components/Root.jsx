@@ -1,11 +1,13 @@
 import Navbar from "./Navbar";
 import 'animate.css';
 import { Outlet } from 'react-router-dom';
+import Footer from "./Footer";
 const Root = () => {
     return (
-        <div className="m-5 lg:mx-10">           
+        <div>           
             <Navbar />
-            <Outlet />
+            <Outlet className="m-5 lg:mx-10" />
+            <Footer />
         </div>
     );
 };

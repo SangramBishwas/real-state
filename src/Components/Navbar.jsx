@@ -14,20 +14,20 @@ const Navbar = () => {
             .catch(error => console.error(error))
     }
     const navLinks = <>
-        <li><NavLink to="/">Home</NavLink></li>
-        <li><NavLink to="/register">Register</NavLink></li>
-        <li><NavLink to="/about">About</NavLink></li>
+        <li><NavLink to="/" className={({isActive}) => isActive ? "text-lg font-bold" : "italic text-lg"}>Home</NavLink></li>
+        <li><NavLink to="/register" className={({isActive}) => isActive ? "text-lg font-bold" : "italic text-lg"}>Register</NavLink></li>
+        <li><NavLink to="/about" className={({isActive}) => isActive ? "text-lg font-bold" : "italic text-lg"}>About</NavLink></li>
         {user &&
             <>
-                <li><NavLink to="/update&profile">Update Profile</NavLink></li>
-                <li><NavLink to="/service">Services</NavLink></li>
+                <li><NavLink to="/update&profile" className={({isActive}) => isActive ? "text-lg font-bold" : "italic text-lg"}>Update Profile</NavLink></li>
+                <li><NavLink to="/service" className={({isActive}) => isActive ? "text-lg font-bold" : "italic text-lg"}>Services</NavLink></li>
             </>
         }
     </>
     return (
-        <div>
+        <div className="">
             <ToastContainer />
-            <div className="navbar bg-base-100">
+            <div className="navbar pl-16 bg-base-300 rounded-xl">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
