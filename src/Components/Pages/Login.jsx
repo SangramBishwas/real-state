@@ -23,6 +23,7 @@ const Login = () => {
                 navigate(location?.state ? location.state : "/");
             })
             .catch(error => {
+                toast.error('Incorrect password');
                 console.error(error.message);
             })
 

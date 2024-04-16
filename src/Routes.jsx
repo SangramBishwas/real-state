@@ -4,18 +4,20 @@ import {
 import Root from "./Components/Root";
 import Home from "./Components/Pages/Home";
 import Register from "./Components/Pages/Register";
-import About from "./Components/Pages/About";
+// import About from "./Components/Pages/About";
 import Login from "./Components/Pages/Login";
 import UpdateProfile from "./Components/Pages/UpdateProfile";
 import LandDetails from "./Components/Pages/LandDetails";
 import PrivateRoute from "./PrivateRoute";
 import Services from "./Components/Sections/Services";
+import Error from "./Components/Pages/Error";
 
 
 const router = createBrowserRouter([
     {
       path: "/",
       element: <Root />,
+      errorElement: <Error />,
       children: [
         {
             path: "/",
@@ -31,10 +33,10 @@ const router = createBrowserRouter([
             path: "/register",
             element: <Register />
         },
-        {
-            path: "/about",
-            element: <About />
-        },
+        // {
+        //     path: "/about",
+        //     element: <About />
+        // },
         {
             path: "/login",
             element: <Login />

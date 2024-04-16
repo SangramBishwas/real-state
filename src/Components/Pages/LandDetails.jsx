@@ -1,7 +1,7 @@
 import { RiFocus3Line } from "react-icons/ri";
 import { FaLocationDot, FaChartArea } from "react-icons/fa6";
-import { useLoaderData, useParams } from "react-router-dom";
-
+import { Link, useLoaderData, useParams } from "react-router-dom";
+import { IoIosArrowBack } from "react-icons/io";
 const LandDetails = () => {
     const lands = useLoaderData();
     const { id } = useParams();
@@ -40,9 +40,9 @@ const LandDetails = () => {
                             </div>
                             <div className='flex items-center gap-1'><RiFocus3Line className='text-lg' /><span className='text-lg font-bold'>For {status}</span></div>
                         </div>
-                        <div className="card-actions justify-end">
-                            <button className="btn btn-primary">Listen</button>
-                        </div>
+                        <Link to="/" className="card-actions justify-end">
+                            <button className="btn btn-primary text-lg"><IoIosArrowBack className="text-xl" /> Back</button>
+                        </Link>
                     </div>
                 </div>
             </div>
