@@ -20,53 +20,53 @@ const ContextProvider = ({ children }) => {
     }
     //-------Login with google------
     const googleLogin = () => {
-        setLoading(true)
-        return signInWithPopup(auth, googleProvider);
-    }
-    //-------Login with github------
-    const githubLogin = () => {
-        setLoading(true)
-        return signInWithPopup(auth, githubProvider);
-    }
-    //-------Update User Profile----
-    const updateUserProfile = (name, image) => {
-        return updateProfile(auth.currentUser, {
-            displayName: name,
-            photoURL: image
-        })
-    }
-    //------------Log Out-----------
-    const LogOut = () => {
-        setLoading(true)
-        return signOut(auth);
-    }
+    setLoading(true)
+    return signInWithPopup(auth, googleProvider);
+}
+//-------Login with github------
+const githubLogin = () => {
+    setLoading(true)
+    return signInWithPopup(auth, githubProvider);
+}
+//-------Update User Profile----
+const updateUserProfile = (name, image) => {
+    return updateProfile(auth.currentUser, {
+        displayName: name,
+        photoURL: image
+    })
+}
+//------------Log Out-----------
+const LogOut = () => {
+    setLoading(true)
+    return signOut(auth);
+}
 
-    const authInfo = {
-        user,
-        loading,
-        creatUser,
-        userLogin,
-        googleLogin,
-        githubLogin,
-        updateUserProfile,
-        LogOut
+const authInfo = {
+    user,
+    loading,
+    creatUser,
+    userLogin,
+    googleLogin,
+    githubLogin,
+    updateUserProfile,
+    LogOut
+}
+
+useEffect(() => {
+    const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
+        setUser(currentUser);
+        setLoading(false);
+    })
+    return () => {
+        unSubscribe()
     }
+}, [])
 
-    useEffect(() => {
-        const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
-            setUser(currentUser);
-            setLoading(false);
-        })
-        return () => {
-            unSubscribe()
-        }
-    }, [])
-
-    return (
-        <Context.Provider value={authInfo}>
-            {children}
-        </Context.Provider>
-    );
+return (
+    <Context.Provider value={authInfo}>
+        {children}
+    </Context.Provider>
+);
 };
 
 ContextProvider.propTypes = {

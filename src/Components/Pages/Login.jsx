@@ -6,6 +6,7 @@ import { FcGoogle } from "react-icons/fc";
 import { ImGithub } from "react-icons/im";
 import { FaFacebook, FaEye, FaEyeSlash } from "react-icons/fa";
 import { Helmet } from "react-helmet-async";
+
 const Login = () => {
     const [showPassword, setShowPassword] = useState(false);
     const [inputPassword, setInputPassword] = useState('')
@@ -36,7 +37,7 @@ const Login = () => {
     }
     const handleSignInWithGoogle = () => {
         googleLogin()
-            .then((result) => {
+            .then(result => {
                 toast.success('Successfully Logged in');
                 const user = result.user
                 updateUserProfile(user.displayName, user.photoURL)
@@ -47,9 +48,6 @@ const Login = () => {
                         toast.error(error.message);
                         console.log(error)
                     })
-            })
-            .catch(error => {
-                console.error(error.message);
             })
     }
     const handleSignInWithGithub = () => {
