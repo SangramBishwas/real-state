@@ -1,10 +1,10 @@
 import { useContext } from "react";
 import { Context } from "../../ContextProvider";
-import { toast } from 'react-toastify';
-import { Await } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
+
 const UpdateProfile = () => {
     const { user, updateUserProfile } = useContext(Context);
-  
+
     const handleUpdateInfo = (e) => {
         const form = new FormData(e.currentTarget);
         const name = form.get('name');
@@ -17,6 +17,9 @@ const UpdateProfile = () => {
     }
     return (
         <div className="hero lg:w-2/3 h-3/4 bg-base-200 my-10 mx-auto rounded-3xl">
+            <Helmet>
+                <title>BdLand | Update Profile</title>
+            </Helmet>
             {
                 user &&
                 <div className="hero-content lg:items-start gap-10 flex-col lg:flex-row">
@@ -32,7 +35,6 @@ const UpdateProfile = () => {
                             <h4 className="text-xl font-semibold">{user.email}</h4>
                         </div>
                         <p className="py-4">Now you can update your profile information. So if you want to update your personal information, please click /Edit Profile/ button here... </p>
-                        {/* Open the modal using document.getElementById('ID').showModal() method */}
                         <button className="btn text-lg btn-primary" onClick={() => document.getElementById('my_modal_5').showModal()}>Edit Profile</button>
                         <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle">
                             <div className="modal-box">
@@ -44,7 +46,7 @@ const UpdateProfile = () => {
                                             <span className="label-text">Your Name</span>
                                         </label>
                                         <input type="text" placeholder="Name"
-                                            name="name" className="input input-bordered" />
+                                            name="name" className="input input-bordered" required/>
                                     </div>
                                     <div className="form-control">
                                         <label className="label">

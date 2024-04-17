@@ -2,6 +2,7 @@ import { RiFocus3Line } from "react-icons/ri";
 import { FaLocationDot, FaChartArea } from "react-icons/fa6";
 import { Link, useLoaderData, useParams } from "react-router-dom";
 import { IoIosArrowBack } from "react-icons/io";
+import { Helmet } from "react-helmet-async";
 const LandDetails = () => {
     const lands = useLoaderData();
     const { id } = useParams();
@@ -20,6 +21,9 @@ const LandDetails = () => {
 
     return (
         <div className="my-5 lg:mx-20 lg:my-10">
+            <Helmet>
+                <title>BdLand | {title}</title>
+            </Helmet>
             <h3 className="text-center text-2xl lg:text-3xl font-bold">Details of {category}</h3>
             <div className="flex flex-col lg:card-side bg-base-100 my-5 lg:my-10">
                 <figure className="lg:w-full"><img className="w-full h-4/5" src={image} alt="Album" /></figure>

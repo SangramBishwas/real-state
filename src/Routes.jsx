@@ -43,7 +43,7 @@ const router = createBrowserRouter([
         },
         {
             path: "/service",
-            element: <Services />
+            element: <PrivateRoute><Services /></PrivateRoute>
         },
         {
             path: "/update&profile",

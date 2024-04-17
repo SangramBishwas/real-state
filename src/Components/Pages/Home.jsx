@@ -1,10 +1,14 @@
 import { useLoaderData } from "react-router-dom";
 import Land from "../Sections/Land";
 import Slider from "../Sections/Slider";
+import { Helmet } from "react-helmet-async";
 const Home = () => {
     const lands = useLoaderData();
     return (
         <div>
+            <Helmet>
+                <title>BdLand | Home</title>
+            </Helmet>
             <div className="z-1"><Slider /></div>
             <div className="m-5 lg:mx-20 lg:my-16">
                 <h2 className="text-center text-3xl font-semibold">Our Existing Properties</h2>

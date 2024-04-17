@@ -1,8 +1,12 @@
+import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 
 const Error = () => {
     return (
         <div className="min-h-screen flex items-center justify-center text-center">
+            <Helmet>
+                <title>BdLand | Error</title>
+            </Helmet>
             <div className="space-y-3">
                 <h1 className="text-6xl lg:text-9xl font-extrabold">Oops!</h1>
                 <h3 className="text-3xl font-bold my-5">404 - PAGE NOT FOUND</h3>

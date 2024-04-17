@@ -5,10 +5,11 @@ import { toast } from 'react-toastify';
 import { FcGoogle } from "react-icons/fc";
 import { ImGithub } from "react-icons/im";
 import { FaFacebook, FaEye, FaEyeSlash } from "react-icons/fa";
+import { Helmet } from "react-helmet-async";
 const Login = () => {
     const [showPassword, setShowPassword] = useState(false);
     const [inputPassword, setInputPassword] = useState('')
-    const { userLogin, googleLogin, updateUserProfile } = useContext(Context);
+    const { userLogin, googleLogin, githubLogin, updateUserProfile } = useContext(Context);
     const location = useLocation()
     const navigate = useNavigate();
     const handleLogin = (e) => {
@@ -42,15 +43,39 @@ const Login = () => {
                     .then(() => {
                         navigate(location?.state ? location.state : "/");
                     })
-                    .catch((error) => console.log(error))
+                    .catch((error) => {
+                        toast.error(error.message);
+                        console.log(error)
+                    })
             })
             .catch(error => {
                 console.error(error.message);
             })
     }
+    const handleSignInWithGithub = () => {
+        githubLogin()
+            .then((result) => {
+                toast.success('Successfully Logged in');
+                const user = result.user
+                updateUserProfile(user.displayName, user.photoURL)
+                    .then(() => {
+                        navigate(location?.state ? location.state : "/");
+                    })
+                    .catch((error) => {
+                        toast.error(error.message);
+                        console.log(error)
+                    })
+            })
+            .catch(error => {
+                toast.error(error.message);
+            })
+    }
 
     return (
         <div className="my-10">
+            <Helmet>
+                <title>BdLand | Login</title>
+            </Helmet>
             <h2 className="text-3xl font-bold text-center">Please Login</h2>
             <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100 mx-auto mt-5">
                 <form onSubmit={handleLogin} className="card-body">
@@ -95,7 +120,7 @@ const Login = () => {
                 </form>
                 <div className="flex justify-center gap-5 mb-4">
                     <button onClick={handleSignInWithGoogle} className="btn text-xl rounded-3xl"><FcGoogle /></button>
-                    <button className="btn text-xl rounded-3xl"><ImGithub /></button>
+                    <button onClick={handleSignInWithGithub} className="btn text-xl rounded-3xl"><ImGithub /></button>
                     <button className="btn text-xl rounded-3xl"><FaFacebook /></button>
                 </div>
             </div>

@@ -5,6 +5,7 @@ import { toast } from 'react-toastify';
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import 'react-toastify/dist/ReactToastify.css';
 import { Context } from "../../ContextProvider";
+import { Helmet } from "react-helmet-async";
 
 const Register = () => {
     const [showPassword, setShowPassword] = useState(false);
@@ -36,6 +37,9 @@ const Register = () => {
     }
     return (
         <div className="my-10">
+            <Helmet>
+                <title>BdLand | Register</title>
+            </Helmet>
             <h2 className="text-3xl font-bold text-center">Please Register Now</h2>
             <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100 mx-auto mt-5">
                 <form onSubmit={handleSubmit(Register)} className="card-body">
