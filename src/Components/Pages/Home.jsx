@@ -3,7 +3,9 @@ import Land from "../Sections/Land";
 import Slider from "../Sections/Slider";
 import { Helmet } from "react-helmet-async";
 const Home = () => {
-    const lands = useLoaderData();
+    const loadLands = useLoaderData();
+    const lands = loadLands.slice(0, 3)
+
     return (
         <div>
             <Helmet>
